@@ -2853,7 +2853,7 @@ namespace E3Core.Processors
 				//try 3 times
 				for (Int32 i = 0; i < 3; i++)
 				{
-					MQ.Write($"Iussing truetarget on: {targetID}:{spawnName} CALLED BY:{memberName} FN:{fileName} LN:{lineNumber}");
+					//MQ.Write($"Iussing truetarget on: {targetID}:{spawnName} CALLED BY:{memberName} FN:{fileName} LN:{lineNumber}");
 					MQ.Cmd($"/target id {targetID}");
 					MQ.Delay(300, $"${{Target.ID}}=={targetID}");
 					//swapping targets turn off autofire

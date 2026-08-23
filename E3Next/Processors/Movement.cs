@@ -403,7 +403,12 @@ namespace E3Core.Processors
             if (MQ.Query<bool>("${Stick.Active}")) MQ.Cmd("/squelch /stick off");
             if (MQ.Query<bool>("${AdvPath.Following}")) MQ.Cmd("/squelch /afollow off ");
             if (Movement.Following) Movement.Following = false;
-        }
+            MovementPaused = true;
+		}
+        public static void UnPauseMovement()
+        {
+            MovementPaused = false;
+		}
         public static void ResetKeepFollow()
         {
             AnchorTarget = 0;
