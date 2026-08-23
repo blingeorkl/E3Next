@@ -155,9 +155,12 @@ namespace E3Core.Processors
 
 			foreach (var spell in E3.CharacterSettings.Charm_CharmOhShitSpells)
 			{
-				while (Casting.InGlobalCooldown())
+				if(spell.CastType== CastingType.Spell)
 				{
-					MQ.Delay(50);
+					while (Casting.InGlobalCooldown())
+					{
+						MQ.Delay(50);
+					}
 				}
 				if (!Casting.Ifs(spell)) continue;
 				if (!Casting.CheckReady(spell)) continue;
@@ -168,9 +171,12 @@ namespace E3Core.Processors
 			}
 			foreach (var spell in E3.CharacterSettings.Charm_SelfDebuffSpells)
 			{
-				while (Casting.InGlobalCooldown())
+				if (spell.CastType == CastingType.Spell)
 				{
-					MQ.Delay(50);
+					while (Casting.InGlobalCooldown())
+					{
+						MQ.Delay(50);
+					}
 				}
 				if (!Casting.Ifs(spell)) continue;
 				Casting.Cast(_charmTargetId, spell);

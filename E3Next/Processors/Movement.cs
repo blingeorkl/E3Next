@@ -318,7 +318,7 @@ namespace E3Core.Processors
                     {
                    
                         MQ.Cmd($"/squelch /moveto loc {c_y} {c_x} mdist {_followMeDistance}");
-						MQ.Write($"Distance is {distance} trying to to move to {c_x},{c_y}, {c_z}");
+						//MQ.Write($"Distance is {distance} trying to to move to {c_x},{c_y}, {c_z}");
                        
                         if(_e3follow_replay)
 						{
@@ -403,7 +403,7 @@ namespace E3Core.Processors
             if (MQ.Query<bool>("${Stick.Active}")) MQ.Cmd("/squelch /stick off");
             if (MQ.Query<bool>("${AdvPath.Following}")) MQ.Cmd("/squelch /afollow off ");
             if (Movement.Following) Movement.Following = false;
-            MovementPaused = true;
+            //MovementPaused = true;
 		}
         public static void UnPauseMovement()
         {
